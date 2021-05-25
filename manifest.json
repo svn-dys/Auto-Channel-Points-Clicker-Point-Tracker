@@ -1,0 +1,31 @@
+{
+  "name": "Twitch Auto Points Clicker & Point Tracker",
+  "version": "1.1.5",
+  "manifest_version": 2,
+  "description": "Twitch point collector and point tracker.",
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitch.tv/*"],
+      "js": ["restore_points.js","content.js","grabLoot.js","title_text.js"]
+    }
+  ],
+  "icons": { 
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+   "128": "icon128.png" 
+  },
+  "background": {
+    "scripts": ["event_onInstalled.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Twitch Auto Channel Points Clicker & Point Tracker",
+    "default_icon": "main_icon.png",
+    "default_popup": "popup.html"
+  },
+  "appDesc": {
+    "message": "Automatically claims the channel points chests on your favorite Twitch streams."
+  },
+  "permissions": ["storage","https://*.twitch.tv/*"]
+}
