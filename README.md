@@ -18,3 +18,6 @@ Permissions explained:
 
     • "storage" permission - Extension stores your points to your sync profile of your current browser. Also used to display points in the extension popup.
     • "https://*.twitch.tv/*"/host permissions - Only run the extension at the Twitch.tv domain.
+
+
+https://chrome.google.com/webstore/detail/twitch-auto-points-clicke/afflghncaaiaebonpbplhpjhbkaciaim
