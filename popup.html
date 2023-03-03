@@ -1,0 +1,129 @@
+<!doctype html>
+<html style="width: 275px; height: auto;">
+    <style>
+        .center {
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 20px);
+        }
+        label.button_text {
+            font-size: 12pt;
+            align-items: center;
+        }
+        .tw-icon {
+            margin-top: 0%;
+            border-radius: 7.8px;
+            margin-right: 5px;
+            padding-bottom: 1px;
+            margin-bottom: 1px;
+        }
+        .hr_onboard {
+            float:top;
+            height:1px;
+            background-color:black;
+            margin-bottom:0px;
+            display: block; 
+            border: 0; 
+            border-top: 1px solid #ccc;
+            margin: 0em 0; 
+            padding: 0;
+        }
+        .twitch_logo {
+            position: relative;
+            float:left;
+            left:0%;
+            margin-top: 9px;
+            margin-left:5px;
+        }
+        .drop_bg_color {
+            mix-blend-mode: screen;
+            left:0px;
+            float:left;
+            position:absolute;
+            height: 55px;
+            width: 100%;
+            background: linear-gradient(62deg, #e7a105, #c212c8, #00e4c1);
+            background-size: 600% 600%;
+
+            -webkit-animation: AnimationName 16s ease infinite;
+            -moz-animation: AnimationName 16s ease infinite;
+            animation: AnimationName 16s ease infinite;
+            }
+
+            @-webkit-keyframes AnimationName {
+                0%{background-position:0% 97%}
+                50%{background-position:100% 4%}
+                100%{background-position:0% 97%}
+            }
+            @-moz-keyframes AnimationName {
+                0%{background-position:0% 97%}
+                50%{background-position:100% 4%}
+                100%{background-position:0% 97%}
+            }
+            @keyframes AnimationName {
+                0%{background-position:0% 97%}
+                50%{background-position:100% 4%}
+                100%{background-position:0% 97%}
+            } 
+        #num_points {
+            font: Arial;
+            cursor: pointer;
+            color:white;
+            position: relative;
+            bottom:3px;
+            font-size: 13px;
+        }
+        .points_grabbed {
+            font: Arial;
+            color:white;
+            position: relative;
+            bottom:3px;
+            font-size: 13px;
+        }
+        .archive {
+            width:100%;
+            font-size: 12px;
+            margin-top:3px;
+            justify-content: center;
+            position:relative;
+            font: Arial;
+            float:left
+        }
+        .wrapper_archive {
+            overflow: hidden;
+        }
+        html, body {
+            margin:0px;
+            margin-top: 1.5px;
+            padding:0;
+        }
+        body {
+            text-align:center;
+        }
+        body:before {
+            content:'';
+            vertical-align:middle;
+        }
+    </style>
+    <body>
+        <div id="top_div">
+            <div class="twitch-loot-icon">
+                <img src="tw-icon.gif" id="tw-icon" style="border-radius: 10%;">
+            </div>
+            <div class="title-text">
+                <label class="button_text">Twitch Channel Points Grabber</label>
+            </div>
+            <hr class="hr_onboard"></hr>
+            <div class="overlay_bg"></div>
+            <div class="drop_bg_color" style="z-index: -1;"></div>
+            <div class="wrapper_archive">
+                <div class="archive">
+                    <label class="points_grabbed" style="color:white;">Points Grabbed by extension: </label>
+                    <label title="Total points that this extension has grabbed for you across all Twitch channels." value="0" id="num_points">
+                        <script src="restore_points.js"></script>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
