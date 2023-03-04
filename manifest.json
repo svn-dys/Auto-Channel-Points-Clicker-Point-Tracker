@@ -1,6 +1,6 @@
 {
   "name": "Twitch Auto Points Clicker & Point Tracker",
-  "version": "2.3",
+  "version": "2.5",
   "manifest_version": 3,
   "description": "Twitch point collector and point tracker.",
   "permissions": ["storage"],

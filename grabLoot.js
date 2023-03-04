@@ -64,22 +64,13 @@ function observePointCollectionAmount() {
     });
 }
 
-function recallObserverLater() {
-    const NINE_MINUTES = 540000;
-
-    setTimeout(() => {
-        observeAndCollectTwitchChests();
-    }, NINE_MINUTES);
-}
-
 observeAndCollectTwitchChests = () => {
         const observer = new MutationObserver(mutations => {
             if (document.querySelector('.claimable-bonus__icon')) {
                 for(mutation in mutations) {
                     if (document.querySelector('.claimable-bonus__icon')) {
                         document.querySelector('.claimable-bonus__icon').click();            
-                        observer.disconnect();
-                        recallObserverLater()
+                        return;
                     }
                 }
             }
