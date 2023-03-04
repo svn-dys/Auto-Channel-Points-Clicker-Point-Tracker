@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: unset;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas: 
+        "header"
+        "mid"
+        "footer";
+    justify-items: center;
+    width: 350px;
+    height: 100px;   
+}
+
+.footer-container {
+    width: 100%;
+    mix-blend-mode: screen;
+    background: linear-gradient(62deg, #e7a105, #c212c8, #00e4c1);
+    background-size: 200% 200%;
+    -webkit-mask-image: linear-gradient(to top, #202020 79%, transparent 95%);
+    mask-image: linear-gradient(to top, #202020 79%, transparent 95%);
+    -webkit-animation: ColorMixer 16s ease infinite;
+    -moz-animation: ColorMixer 16s ease infinite;
+    animation: ColorMixer 16s ease infinite;
+}
+
+@-webkit-keyframes ColorMixer {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@-moz-keyframes ColorMixer {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@keyframes ColorMixer {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #202020;
+    }
+
+    .title-text {
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .title-text {
+        color: black;
+    }
+}
+
+.container > .github-icon {
+    grid-area: header;
+    justify-self: left;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.container > .webstore-icon {
+    grid-area: header;
+    justify-self: left;
+    margin-left: 33px;
+    margin-top: 6px;
+}
+
+.container > .twitch-loot-icon {
+    grid-area: header;
+    justify-self: center;
+    margin-top: 5px;
+}
+
+.title-text {
+    letter-spacing: 0.2px;
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.num-points-text {
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.04px;
+    font-weight: 550;
+    padding-top: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.num-points-text, .title-text {
+    font-family: Arial, Helvetica, sans-serif;
+}
