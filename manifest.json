@@ -1,6 +1,6 @@
 {
   "name": "Twitch Auto Points Clicker & Point Tracker",
-  "version": "2.6",
+  "version": "2.7",
   "manifest_version": 3,
   "description": "Twitch point collector and point tracker.",
   "permissions": ["storage"],
@@ -13,7 +13,7 @@
           "https://*.twitch.tv/*"
         ],
         "js": [
-            "./src/grabLoot.js"
+            "./src/grab-chest.js"
         ],
         "run_at": "document_start"
     }

@@ -1,3 +1,7 @@
+window.onload = () => {
+    console.log("Twitch Auto Points Clicker & Point Tracker has initialized, looking for chests...");
+}
+
 function waitForElement(selector) {
     return new Promise((resolve) => {
         if (document.querySelector(selector)) {
@@ -76,7 +80,6 @@ function observePointCollectionAmount() {
 
 observeAndCollectTwitchChests = () => {
     const observer = new MutationObserver((mutations) => {
-        console.log("Twitch Auto Points Clicker & Point Tracker has initialized, looking for chests...")
         if (document.querySelector(".claimable-bonus__icon")) {
             for (mutation in mutations) {
                 if (document.querySelector(".claimable-bonus__icon")) {
