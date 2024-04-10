@@ -2,6 +2,7 @@ window.onload = () => {
     console.log("Twitch Auto Points Clicker & Point Tracker has initialized, looking for chests...");
 }
 
+// Waits for a specific element to render before attaching a MutationObserver to said element.
 function waitForElement(selector) {
     return new Promise((resolve) => {
         if (document.querySelector(selector)) {
@@ -29,8 +30,12 @@ function addPointsToSyncProfile(pointsObtained) {
     });
 }
 
+/*
+Since a point collection chest can be another value other than 50 points, depending if the viewer
+is a sub or not and the tier of the sub, let's observe for the amount collected from chests and 
+update storage accordingly. 
+*/
 function observePointCollectionAmount() {
-    // Wait for chest point section to render on page
     waitForElement("div[class*='community-points']").then((pointSection) => {
         const observer = new MutationObserver((mutations) => {
             for (let mutation of mutations) {
@@ -89,12 +94,14 @@ observeAndCollectTwitchChests = () => {
             }
         }
     });
-
+    
+    // Observe document for claimable chest. 
     observer.observe(document, {
         childList: true,
         subtree: true,
     });
 };
 
+// observePointCollectionAmount() has to execute BEFORE observeAndCollectTwitchChests(), as the first chest won't be updated!
 observePointCollectionAmount();
 observeAndCollectTwitchChests();
